@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #45454c;
+}
+
+.country {
+  stroke: #33a9e0;
+  stroke-width: 2;
+  fill: transparent;
+}
+
+.state {
+  stroke: #35354c;
+  fill: transparent;
+}
+
+.market {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.market.active {
+  transition: none;
+}
