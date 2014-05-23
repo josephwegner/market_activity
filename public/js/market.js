@@ -34,7 +34,7 @@ Market.prototype.hit = function() {
   self.recentHits++;
 
   self.svg.setAttribute("class", "market active");
-  self.svg.style.opacity = self.recentHits > 10 ? 1 : self.recentHits / 10;
+  self.svg.style.opacity = self.recentHits > 2 ? 1 : self.recentHits / 2;
 
   this.releaseTimeout =setTimeout(function() {
     self.svg.setAttribute("class", "market");

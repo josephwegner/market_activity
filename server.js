@@ -25,14 +25,15 @@ var connection = amqp.createConnection({ host: "dev.bellycard.com" });
 connection.on('ready', function() {
 	console.log("connected to rabbit");
 
-	connection.queue('my-queue', function(q) {
+	connection.queue('joes-demo-queue', function(q) {
 		console.log('queue');
 
-		q.bind('my-exchange', 'checkins', function() {
+		q.bind('monolith', 'checkin_created', function() {
 			console.log('bound to exchange');
 		});
 
 		q.subscribe(function(message) {
+			console.log("checkin!");
 			io.sockets.emit("checkin", message);
 		});
 	});
